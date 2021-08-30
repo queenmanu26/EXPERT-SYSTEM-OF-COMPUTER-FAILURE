@@ -1,0 +1,31 @@
+{% extends 'expert/base.html' %}
+
+
+{% block title %}
+	Réponses
+{% endblock title %}
+
+
+{% block main %}
+	<div class="container container-fluid mt-5" >
+		{% if liste_metiers|length > 0 %}
+			<h3> Vous rencontrez comme panne : </h3>
+			<ul>
+				{% for metier in liste_metiers %}
+				<br><li>{{ metier }}</li> </br>
+				
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p align="justify">Vous n'avez aucune panne que nous pouvons trouvez sur votre machine sauf si vous ayez mal entré vos symptomes. Vous pouvez recommencer le diagnostic pour plus de sureté !</p>
+		{% endif %}
+	</div>
+	</br>
+	<center>
+	       <p>
+				<a href="{% url 'expert:evaluation' %}" class="btn btn-primary">
+					<strong>Recommencer le diagnostic &raquo; </strong>	
+				</a>
+			</p>
+	</center>
+{% endblock main %}

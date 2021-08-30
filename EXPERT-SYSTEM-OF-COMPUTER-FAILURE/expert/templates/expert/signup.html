@@ -1,0 +1,57 @@
+{% extends 'expert/base.html' %}
+
+{% block title %}
+	Inscription
+{% endblock title %}
+
+{% block main %}
+
+<div class="container container-fluid">
+	<style type="text/css">
+		body{
+			color: #fff;
+			background: white;
+			font-family: 'Roboto', sans-serif;
+		}
+		.form-control:focus{
+			border-color: #5cb85c;
+		}
+		.form-control, .btn{        
+			border-radius: 10px;
+		}		
+	</style>
+	<div class="mt-5 d-flex justify-content-center">
+		<form class="col-md-5" action="{% url 'expert:signup' %}" method="post">
+			{% csrf_token %}
+			<div class="mb-4 text-center">
+				<h1 class="text-muted">Création de compte</h1>
+			</div>
+			{% for field in form %}
+				<div class="form-group mb-3">
+					{{ field }}
+					{% if field.help_text %}
+					<small class="form-text text-muted">{{ field.help_text }}</small>
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{% for error in field.errors %}
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						{{ error }}
+					</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+			<div class="form-group">
+				<button type="submit" class="btn btn-success btn-lg btn-block">S'enregistrer maintenant</button>
+			</div>
+		</form>
+	</div>
+	<div class="d-flex justify-content-center">
+		<a href="{% url 'expert:login' %}" class="btn btn-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Connexion</a>
+	</div>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,26 @@
+{% extends 'expert/base.html' %}
+
+
+{% block title %}
+	 Acceuil	
+{% endblock title %}
+	
+
+{% block main %}
+    <center>
+	<div class="jumbotron">
+		<div class="container container-fluid">
+			<h1>CONFEXPERT</h1> 
+			<p>
+				Retrouvez facilement les <strong> pannes</strong> rencontrées sur vos machines grâce au <strong>Système Expert d'aide au diagnostic de pannes des Ordinateurs</strong>... Et optimisez votre <strong> temps</strong> de diagnostic ! 
+			</p>
+			<p>
+				<a href="{% url 'expert:evaluation' %}" class="btn btn-primary">
+					<strong>Commencer le diagnostic &raquo; </strong>	
+				</a>
+			</p>
+		</div>
+	</div>
+	</center>
+{% endblock main %}
+	

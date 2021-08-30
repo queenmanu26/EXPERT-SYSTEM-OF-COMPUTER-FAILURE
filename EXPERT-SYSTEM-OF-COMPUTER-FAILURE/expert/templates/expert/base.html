@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static 'expert/bootstrap-4.3.1/css/bootstrap.min.css' %}">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="{% static 'expert/fontawesome-free-5.10.2-web/css/all.min.css' %}">
+	<title>
+	{% block title %}
+		
+	{% endblock title %}
+	</title>
+</head>
+<body>
+	<header>
+	{% block header %}
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container container-fluid">
+			<a class="navbar-brand" href="{% url 'expert:home' %}">
+				<i class="fas fa-home"></i>
+				Acceuil
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'expert:professions' %}">
+								<i class="fas fa-user-tie"></i>
+								Pannes
+							</a>
+						</li>
+						
+						{% if user.is_authenticated %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'expert:logout' %}">
+								<i class="fas fa-sign-out-alt"></i>
+								Déconnexion ({{ user.username }})
+							</a> 
+						</li>
+						{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'expert:login' %}">
+								<i class="fas fa-sign-in-alt"></i>
+								Connexion
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'expert:signup' %}">
+								<i class="fas fa-pencil-alt"></i>
+								Inscription
+							</a>
+						</li>
+						{% endif %}
+					</ul>
+			</div>
+		</div>
+		
+	</nav>
+	{% endblock header %}
+	</header>
+	
+	<main>
+		{% block main %}
+			
+		{% endblock main %}
+	</main>
+     
+	<footer class="sticky-bottom py-4 ">
+	
+		<div class="container container-fluid">
+			<span class="text-muted">&copy; <strong>CONFEXPERT</strong>/UPAC 2021</span> 
+		</div>
+	</footer>
+
+	<!-- JQuery JS -->
+	<script src="{% static 'expert/jquery-3.4.1.min.js' %}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{% static 'expert/bootstrap-4.3.1/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

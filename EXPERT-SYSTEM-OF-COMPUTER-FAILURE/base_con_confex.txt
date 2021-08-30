@@ -1,0 +1,177 @@
+E1 = True 
+E2 = True 
+E3 = True 
+E4 = True 
+E5 = True 
+E6 = True 
+E7 = True  
+E8 = True 
+E9 = True  
+E10 = True 
+E11 = True 
+E12 = True 
+E13 = True 
+
+B1 = True 
+B2 = True  
+B3 = True   
+B4 = True   
+B5 = True  
+B6 = True   
+B7 = True   
+B8 = True   
+B9 = True   
+B10 = True  
+B11 = True   
+B12 = True 
+
+S1 = True  
+S2 = True 
+S3 = True 
+S4 = True 
+S5 = True 
+S6 = True 
+S7 = True 
+S8 = True 
+S9 = True 
+S10 = True 
+S11 = True 
+S12 = True 
+S13 = True 
+S14 = True 
+S15 = True 
+S16 = True 
+S17 = True 
+S18 = True 
+S19 = True 
+S20 = True 
+S21 = True 
+S22 = True 
+S23 = True 
+S24 = True 
+S25 = True 
+S26 = True 
+S27 = True 
+S28 = True 
+S29 = True 
+S30 = True 
+S31 = True 
+S32 = True 
+S33 = True 
+S34 = True 
+S35 = True 
+S36 = True 
+S37 = True 
+S38 = True 
+S39 = True 
+S40 = True 
+S41 = True 
+S42 = True 
+S43 = True 
+S44 = True 
+S45 = True 
+S46 = True 
+S47 = True 
+S48 = True 
+S49 = True 
+S50 = True 
+S51 = True 
+S52 = True 
+S53 = True 
+S54 = True 
+S55 = True 
+S56 = True 
+S57 = True 
+S58 = True 
+S59 = True 
+S60 = True 
+S61 = True 
+S62 = True 
+S63 = True 
+S64 = True 
+
+ 
+PRA = True 
+PD = True 
+PCG = True
+PCH = True 
+PLC = True 
+PHP = True 
+PCS = True 
+PPH = True 
+PC = True 
+PRO = True 
+
+PCM = True 
+PCHA = True 
+PPJ = True 
+PIN = True 
+PCA = True 
+PLD = True 
+PIC = True 
+PIP = True 
+PVD = True 
+
+PP = True 
+
+PBA = True 
+
+PE = True 
+PPS = True 
+PPV = True 
+PS = True 
+PPI = True 
+PID = True 
+PPU = True 
+PBa = True 
+PRL = True 
+
+PIM = True 
+PCR = True 
+
+DRA1 = True:= E5 == True || E6 == True
+DRA2 = True:= B6 == True 
+DRA3 = True:= S37 ==True || S57 == True || S5 == True & S56 == True
+DRA4 = True:= S39 == True & S25 == False & S1 == True & || S2 == True 
+DRA5 = True:= S3 == False & S62 == False & S64 == False 
+D1 = True := DRA1 == True || DRA2 == True || DRA3 == True || DRA4 == True || DRA5 == True
+DCG1 = True := E3 == True || E13 == True || B11 == True
+DCG3 = True := S52 == True || S54 == True & S21 == True || S36 == True & S56 == True || S37 == True & S60 == True
+DCG4 = True := DRA4 == True
+DCG5 = True := S3 == True & S62 == False & S64 == True
+D2 = True := DCG1 == True ||  DCG3 == True || DCG4 == True || DCG5 == True
+DC1 = True := E9 == True || B9 == True
+DC2 = True := S45 == True || S46 == True || S47 == True
+DC3 = True := S39 == True & S25 == False & S1 == False || S2 == False
+DC4 = True := S13 == False & S45 == True
+D3 = True := DC1 == True || DC2 == True || DC3 == True || DC4 == True 
+DV1 = True := S38 == False & S16 == True & S30 == True 
+DV2 = True := E12 == True || S59 == True & S54 == True || S24 == True
+DV3 = True := S39 == True & S25 == True 
+D4 = True := DV1 == True || DV2 == True || DV3 == True 
+DP1 = True := DV1 == True
+DP2 = True := B1 == True || E11 == True || B4 == True
+D5 = True := DP1 == True || DP2 == True
+
+PRA = True := D1 == True
+PCG = True := D2 == True
+PC = True := D3 == True
+PD = True := S39 == True & S25 == False & S1 == False || S2 == False & S13 == True
+PV = True := D4 == True
+PP = True := D5 == True
+PBA = True := S38 == True & S40 == False || B10 == True || S54 == True
+PBa = True := S38 == True & S40 == False & S41 == True
+PE = True := S39 == True & S25 == False & S1 == True || S2 == True & S3 == True
+PRL = True := S39 == True & S25 == False & S1 == True || S2 == True & S7 == False
+PCHA = True := S38 == True & S40 == True
+PS = True := S43 == True || S44 == True 
+PPS = True := S43 == True || S44 == True
+PCS = True := S35 == True || S53 == True & S56 == True 
+PCH = True := S22 == True & S19 == True || E3 == True
+PCR =  True := S61 == True & S28 == True || S56 == True & S29 == True
+PRO = True := B7 == True || E7 == True
+PIN = True := E1 == True || E2 == True
+PCA = True := E4 == True
+PIM = True := S33 == True || S34 == True
+PLD = True := S50 == True || E8 == True
+PID = True := S55 == True || S37 == True & S37 == True || S58 == True || S27 == True
